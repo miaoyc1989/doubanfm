@@ -24,13 +24,15 @@ while True:
              'wget',
              '-P',
              'images',
-             song[0]['picture']])
+             song[0]['picture']],
+             shell=True)
     subprocess.call([
          'notify-send',
          '-i',
          os.getcwd() + '/' + picture,
          song[0]['title'],
-         song[0]['artist'] + '\n' + song[0]['albumtitle']])
+         song[0]['artist'] + '\n' + song[0]['albumtitle']],
+         shell=True)
     webbrowser.open(song[0]['url'])
     time.sleep(song[0]['length']) 
 
